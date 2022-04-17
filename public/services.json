@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Test Preparation",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam ",
+        "img": "https://static6.depositphotos.com/1014738/616/i/600/depositphotos_6161739-stock-photo-math-class-in-school.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Group lessons",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam ",
+        "img": "https://www.themedicportal.com/wp-content/uploads/2019/05/Maths-Revision-Tips.jpg"
+    },
+    {
+        "id": 3,
+        "name": "One in One Lessons",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam ",
+        "img": "https://online.stat.psu.edu/statprogram/sites/statprogram/files/2018-08/algebra-review.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Specail seasson",
+        "price": "500",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam ",
+        "img": "https://study.com/cimages/course-image/4th-grade-math_411899_large.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "Home Service",
+        "price": "500",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam ",
+        "img": "https://www.homeschoolermagazine.com/wp-content/uploads/2018/10/home-tutor.jpg"
+    }
+]
