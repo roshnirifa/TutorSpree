@@ -1,0 +1,24 @@
+.navbar {
+    border-bottom: 2px solid rgb(6, 5, 5);
+}
+
+.site-title {
+    text-decoration: none;
+    font-size: 33px;
+}
+
+.site-title:hover {
+    color: black !important;
+}
+
+Nav a {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+Nav a:hover {
+    color: orange !important;
+}
