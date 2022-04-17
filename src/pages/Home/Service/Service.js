@@ -12,7 +12,7 @@ const Service = ({ service }) => {
     return (
         <Row xs={1} md={1} className="g-4 container">
             {Array.from({ length: 1 }).map((_, idx) => (
-                <Col>
+                <Col >
                     <Card>
                         <Card.Img variant="top" src={img} />
                         <Card.Body>

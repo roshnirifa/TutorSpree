@@ -1,9 +1,10 @@
 import React from 'react';
+import './Contact.css'
 
 const Contact = () => {
     return (
-        <div className=' mt-5 bg-light '>
-            <div className="container d-flex justify-content-evenly mt-5 mb-5">
+        <div className=' mt-5 bg-light contact container '>
+            <div className="d-flex justify-content-evenly mt-5 mb-5">
                 <div className="contact-me pt-5">
                     <h1>Contact Me</h1>
                     <div>
