@@ -7,7 +7,7 @@ const Service = ({ service }) => {
     const { name, img, description, price } = service;
     const navigate = useNavigate()
     const handleCheckOut = (name) => {
-        navigate(`/checkout/${name}`)
+        navigate(`/services/${name}`)
     }
     return (
         <Row xs={1} md={1} className="g-4 container">
