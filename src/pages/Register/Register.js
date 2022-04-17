@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase_init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -13,6 +13,8 @@ const Register = () => {
 
     const [createUserWithEmailAndPassword, user, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, error1] = useUpdateProfile(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
 
     const handleSubmit = async (e) => {
@@ -20,21 +22,17 @@ const Register = () => {
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const pass = passRef.current.value;
+
+
         await createUserWithEmailAndPassword(email, pass)
         await updateProfile({ displayName: name });
         alert('Updated profile');
+        navigate('/home')
 
     }
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
+
     if (user) {
-        navigate('/')
-        console.log(user);
+        navigate(from, { replace: true });
     }
     const navigateSignUp = () => {
         navigate('/login');
@@ -55,6 +53,9 @@ const Register = () => {
 
                 <Form.Group className="mb-3">
                     <Form.Control ref={passRef} type="password" placeholder="Password" required />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Control ref={passRef} type="password" placeholder="Confirm Password" required />
                 </Form.Group>
                 <div className='text-center'>
                     <Button variant="primary" type="submit">
