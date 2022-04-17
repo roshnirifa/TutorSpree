@@ -10,6 +10,7 @@ import Login from './pages/Login/Login';
 import RequriedAuth from './pages/Login/RequriedLogin/RequriedAuth';
 import NotFound from './pages/NotFound/NotFound';
 import Register from './pages/Register/Register';
+import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
 
     </div>
   );

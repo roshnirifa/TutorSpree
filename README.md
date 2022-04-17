@@ -1,5 +1,5 @@
 # TutorSpree
-## Framework use unTutorSpree
+## Framework use in TutorSpree
 * react
 * react bootstarp
 * Firebase for authntication
