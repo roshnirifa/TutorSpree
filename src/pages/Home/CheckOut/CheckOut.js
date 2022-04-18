@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 const CheckOut = () => {
     const { serviceId } = useParams();
 
-
-
     return (
         <div>
 
