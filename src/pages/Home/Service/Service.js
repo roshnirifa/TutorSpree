@@ -13,7 +13,7 @@ const Service = ({ service }) => {
         <Row xs={1} md={1} className="g-4 container">
             {Array.from({ length: 1 }).map((_, idx) => (
                 <Col >
-                    <Card>
+                    <Card >
                         <Card.Img variant="top" src={img} />
                         <Card.Body>
                             <h4 className='service-title'>{name}</h4>
