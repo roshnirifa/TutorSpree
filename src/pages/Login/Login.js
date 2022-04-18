@@ -1,11 +1,17 @@
 import React, { useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import auth from '../../firebase_init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Form } from 'react-bootstrap';
 
 import SocialLogin from '../SocialLogin/SocialLogin';
-import './Login.css'
+import './Login.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -14,8 +20,9 @@ const Login = () => {
     const location = useLocation()
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
-
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     let from = location.state?.from?.pathname || "/";
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -29,6 +36,17 @@ const Login = () => {
     }
     const navigateSignUp = () => {
         navigate('/register');
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('please enter your email address');
+        }
     }
     return (
         <div className='mx-auto box my-4'>
@@ -47,9 +65,16 @@ const Login = () => {
                 <div className='text-center'>
                     <button className='btn btn-primary'>Login</button>
                 </div>
-                <p className='mt-4 text-danger fw-bold'>New to TutorSpree? <span className='text-primary' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Register</span></p>
+                <p className='mt-4  fw-bold'>New to TutorSpree? <span className='text-primary' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Register</span></p>
+
+
+                <p className='mt-4  fw-bold'>Forget Password? <span className='text-primary' onClick={resetPassword} style={{ cursor: 'pointer' }}>Reset Password</span></p>
+
+
+                {/* <p>Forget Password? <span className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}>Reset Password</span> </p> */}
 
                 <SocialLogin></SocialLogin>
+                <ToastContainer />
             </Form>
 
 
