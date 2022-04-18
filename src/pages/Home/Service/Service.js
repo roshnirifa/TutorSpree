@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
-    const { name, img, description, price } = service;
+    const { id, name, img, description, price } = service;
     const navigate = useNavigate()
-    const handleCheckOut = (name) => {
-        navigate(`/services/${name}`)
+    const handleCheckOut = (id) => {
+        navigate(`/service/${id}`)
     }
     return (
         <Row xs={1} md={1} className="g-4 container">
@@ -23,7 +23,7 @@ const Service = ({ service }) => {
                                 {description}
                             </Card.Text>
                             <div className='text-center'>
-                                <button onClick={() => handleCheckOut(name)} className='btn btn-outline-primary w-75'>CheckOut</button>
+                                <button onClick={() => handleCheckOut(id)} className='btn btn-outline-primary w-75'>CheckOut</button>
                             </div>
                         </Card.Body>
                     </Card>

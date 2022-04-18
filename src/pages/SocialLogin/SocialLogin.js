@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { BsFacebook, BsGoogle } from "react-icons/bs";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase_init';
 import './SocialLogin.css';
 
@@ -9,6 +9,8 @@ const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithFacebook] = useSignInWithFacebook(auth);
     const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
     if (error) {
         return (
@@ -21,7 +23,7 @@ const SocialLogin = () => {
         return <p>Loading...</p>;
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     return (
         <div className='mx-auto w-50'>
