@@ -59,9 +59,7 @@ const Login = () => {
                 <Form.Group className="mb-3">
                     <Form.Control ref={passRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" >
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <div className='text-center'>
                     <button className='btn btn-primary'>Login</button>
                 </div>
