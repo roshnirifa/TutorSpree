@@ -3,3 +3,13 @@
     box-shadow: 1px 1px 5px 5px lightblue;
     width: 500px;
 }
+
+@media only screen and (max-width: 778px) {
+    .box {
+        width: 300px;
+    }
+
+    .loginBtn {
+        width: 100%;
+    }
+}

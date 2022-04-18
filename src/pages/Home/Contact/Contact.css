@@ -2,3 +2,21 @@
     padding-left: 70px;
     padding-right: 70px;
 }
+
+.contact-form {
+    border: 1px solid blue;
+    margin: 20px;
+    box-shadow: 1px 1px 5px 5px lightblue;
+}
+
+.contact-info {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 778px) {
+    .contact {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

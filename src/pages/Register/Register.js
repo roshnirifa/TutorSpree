@@ -72,7 +72,7 @@ const Register = () => {
                 </Form.Group>
                 <p className='text-danger'>{matchError}</p>
                 <div className='text-center'>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className='loginBtn'>
                         Signup
                     </Button> <br />
                 </div>

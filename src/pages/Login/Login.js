@@ -61,15 +61,13 @@ const Login = () => {
                 </Form.Group>
 
                 <div className='text-center'>
-                    <button className='btn btn-primary'>Login</button>
+                    <button className='btn btn-primary loginBtn'>Login</button>
                 </div>
                 <p className='mt-4  fw-bold'>New to TutorSpree? <span className='text-primary' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Register</span></p>
 
 
                 <p className='mt-4  fw-bold'>Forget Password? <span className='text-primary' onClick={resetPassword} style={{ cursor: 'pointer' }}>Reset Password</span></p>
 
-
-                {/* <p>Forget Password? <span className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}>Reset Password</span> </p> */}
 
                 <SocialLogin></SocialLogin>
                 <ToastContainer />
